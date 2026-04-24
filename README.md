@@ -67,6 +67,30 @@ Once the container is running, use the following value in your `.env` file:
 MONGO_URI = mongodb://myUser:myPass@localhost:27017/mydb?authSource=admin
 ```
 
+#### _Alternative to running a Docker container_
+
+You can use `docker run` or the two-step approach: `create` then `start`
+
+```
+docker create -p 27017:27017 \
+-e MONGO_INITDB_ROOT_USERNAME=myUser \
+-e MONGO_INITDB_ROOT_PASSWORD=myPass \
+--name mongo-container \
+mongo
+```
+
+```
+docker start mongo-container
+```
+
+- `docker create`: Creates a new container from an image but does not start it.
+
+- `docker start`: Starts the existing stopped container created in the previous step.
+
+  Default Behavior: Unlike `docker run`, the `docker start` command operates in **detached mode by default**. You don't need to add a `-d` flag.
+
+_The `docker run` command is essentially a combination of two separate steps_.
+
 ## API Endpoints
 
 | Methods | Endpoints | Actions        |
