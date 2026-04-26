@@ -3,7 +3,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 3000;
-const connString = process.env.MONGO_URI;
+const connString =
+  'mongodb://myUser:myPass@mongo-container:27017/mydb?authSource=admin';
 
 const Book = mongoose.model(
   'Book',

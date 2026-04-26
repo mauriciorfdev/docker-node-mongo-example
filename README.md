@@ -2,10 +2,11 @@
 
 ## About Project
 
-Minimal Node.JS (Express) backend designed to demonstrate how to connect an application to MongoDB in two different setups:
+Minimal Node.JS (Express) backend designed to demonstrate how to connect an application to MongoDB in three different setups:
 
 - Backend + Local MongoDB (MongoDB installed on your machine)
 - Backend + MongoDB running in a Docker container
+- _Backend + MongoDB (Both in Docker containers) 👉 See the full setup instructions [here](docs/backend-docker.md)_
 
 ## Prerequisites
 
